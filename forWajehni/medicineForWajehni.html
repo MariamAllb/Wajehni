@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تخصص الطب - وجهني</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <div class="navbar">
+      <button class="login-link" onclick="goToHome()">العودة للصفحة الرئيسية</button>
+      <h1>تخصص الطب</h1>
+      <button class="login-link" onclick="goToWajehni()">العودة إلى وجهني</button>
+    </div>
+  </header>
+
+  <!-- قسم التخصص -->
+  <section class="subject-hero">
+    <h1>الطب</h1>
+    <p>
+      تخصص الطب هو من أرفع التخصصات الإنسانية والمهنية، إذ يتيح للطبيب دراسة جسم الإنسان من جزيئات الخلية وصولاً إلى وظيفة الأجهزة الحية وتفاعلاتها. يبدأ الطالب في دراسة العلوم الأساسية مثل التشريح، الفسيولوجيا، الكيمياء الحيوية، وميكروبيولوجيا الأمراض، ليبني بذلك أساسًا علميًا متينًا. ثم ينتقل إلى التطبيق السريري في المستشفيات، حيث يكتسب مهارات الفحص السريري، تفسير الفحوصات المخبرية، واستخدام تقنيات التصوير الطبي. كما يتعمق في فروع متنوعة مثل الجراحة العامة، طب الأطفال، الطب الباطني، وطب العيون، وغيرها. هذا التخصص يركّز بشكل أساسي على تنمية القدرة على اتخاذ قرارات دقيقة في ظل الضغوط، التواصل الفعال مع المرضى وأسرهم، والالتزام بأخلاقيات المهنة. الطبيب يلعب دورًا فاعلًا ليس فقط في العلاج، بل في البحث العلمي، التوعية الصحية المجتمعية، والإسهام في تحسين جودة الحياة، مما يتطلب تعلمًا مستمرًا مدى العمر.
+    </p>
+  </section>
+
+  <!-- فيديو تعريفي -->
+  <section class="youtube-video">
+  <iframe 
+    src="https://www.youtube.com/embed/8VB-kEu2W14" 
+    title="فيديو تعريفي عن التخصص الصحي" 
+    allowfullscreen>
+  </iframe>
+</section>
+
+
+  <!-- زر العودة -->
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="../wajehni.html" class="return-button">العودة إلى وجهني</a>
+  </div>
+
+  <!-- سكربت -->
+  <script src="../forWajehni.js"></script>
+  <script>
+    function goToHome() {
+      window.location.href = "../index.html";
+    }
+    function goToWajehni() {
+      window.location.href = "../wajehni.html";
+    }
+  </script>
+
+</body>
+</html>

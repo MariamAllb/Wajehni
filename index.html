@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وجهني - الصفحة الرئيسية</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/Wajehni.png" alt="شعار وجهني" />
+      </div>
+      <ul class="nav-right">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="platform.html">المنصة</a></li>
+        <li><a href="wajehni.html">وجهني</a></li>
+        <li><a href="login.html" class="login-btn" id="loginLink">تسجيل الدخول</a></li>
+        <li><a href="register.html" id="joinLink">انضم معنا</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html">حسابك</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- الهيرو -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>وجهني إلى مستقبلي</h1>
+      <p>"اكتشف المسارات الأكاديمية التي تتناسب مع هدفك، من خلال الإرشاد المهني للتخصصات"</p>
+      <a href="login.html" class="cta-button">ابدأ الآن</a>
+    </div>
+
+    <div class="hero-quotes-right">
+      <div class="quote-circle green">
+        <img src="img/king.png" alt="الملك" />
+        <p>"هدفي أن تكون بلادُنا نموذجاً ناجحاً ورائداً"</p>
+      </div>
+      <div class="quote-circle purple">
+        <img src="img/Wale.png" alt="ولي العهد" />
+        <p>"ثقتي في قدرة أبناء الوطن كبيرة"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- فاصل أبيض -->
+  <div class="section-spacer"></div>
+
+  <!-- شريط التواصل -->
+  <footer class="wajehni-footer">
+    <div class="footer-right">
+      <img src="img/vv2030.png" alt="رؤية 2030" />
+      <img src="img/minlogo.png" alt="وزارة التعليم" />
+    </div>
+    <div class="footer-left">
+      <p class="footer-title">تواصل معنا</p>
+      <p>📧 Mariamsalbarrak@gmail.com</p>
+      <p>📞 +966 50 974 6866</p>
+    </div>
+  </footer>
+
+  <!-- سكربتات -->
+  <script src="script.js"></script>
+  <script src="nav.js"></script>
+
+  <!-- Firebase مكتبات -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBDECIS-T7Q_gj2NeJLBkzIo0Dr688oe-U",
+      authDomain: "wajehni-2820c.firebaseapp.com",
+      projectId: "wajehni-2820c",
+      storageBucket: "wajehni-2820c.appspot.com",
+      messagingSenderId: "712361399660",
+      appId: "1:712361399660:web:1dd3ad0cc0852a5979cf49"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    
+const loginLink = document.getElementById("loginLink");
+const joinLink = document.getElementById("joinLink");
+const profileItem = document.getElementById("profileItem");
+const studentName = localStorage.getItem("studentName");
+
+onAuthStateChanged(auth, (user) => {
+  if (user && studentName) {
+    // ✅ غيّر "تسجيل الدخول" إلى اسم فقط (بدون رابط)
+    if (loginLink) {
+      loginLink.textContent = `مرحبًا، ${studentName}`;
+      loginLink.removeAttribute("href");
+      loginLink.style.cursor = "default";
+    }
+
+    // ✅ أظهر زر "حسابك"
+    if (profileItem) {
+      profileItem.style.display = "inline-block";
+    }
+
+    // ✅ غيّر "انضم معنا" إلى تسجيل الخروج
+    if (joinLink) {
+      joinLink.textContent = "تسجيل الخروج";
+      joinLink.href = "#";
+      joinLink.addEventListener("click", async () => {
+        await signOut(auth);
+        localStorage.removeItem("studentName");
+        alert("تم تسجيل الخروج بنجاح");
+        window.location.reload();
+      });
+    }
+  }
+});
+
+  </script>
+</body>
+</html>

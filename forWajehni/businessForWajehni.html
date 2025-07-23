@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تخصص اداره - وجهني</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <div class="navbar">
+      <button class="login-link" onclick="goToHome()">العودة للصفحة الرئيسية</button>
+      <h1>المسار الأداري </h1>
+      <button class="login-link" onclick="goToWajehni()">العودة إلى وجهني</button>
+    </div>
+  </header>
+
+  <!-- قسم التخصص -->
+  <section class="subject-hero">
+    <h1>ادارة الاعمال </h1>
+    <p>
+    يمثل تخصص إدارة الأعمال النواة لصناعة القادة والمبتكرين في عالم المال والشركات. يبدأ بتأسيس قاعدة متينة في المحاسبة والمالية، ثم ينتقل إلى مهارات التصميم الاستراتيجي للأعمال، التسويق، إدارة موارد بشرية، وريادة الأعمال. يتعلم الطالب كيفية تحليل السوق، اتخاذ قرارات مدروسة، وتطوير الموارد البشرية. كما يكتسب أدوات لإدارة المشاريع وتقييم الأداء، ما يجعله مؤهلاً لقيادة فرق عمل أو تأسيس شركات ناشئة. يكون محور اهتمامه في الإبداع الإداري، التخطيط الاستراتيجي، والعلاقات التجارية. خريجو التخصص قادرون على مواكبة المتغيرات الاقتصادية، وتحقيق أثر فعلي في المؤسسات أو ريادة الأعمال.  
+    </p>
+  </section>
+
+  <!-- فيديو تعريفي -->
+ <section class="youtube-video">
+  <iframe 
+    src="https://www.youtube.com/embed/MZYC_eHyecI" 
+    title="فيديو تعريفي عن تخصص إدارة الأعمال" 
+    allowfullscreen>
+  </iframe>
+</section>
+
+
+  <!-- زر العودة -->
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="../wajehni.html" class="return-button">العودة إلى وجهني</a>
+  </div>
+
+  <!-- سكربت -->
+  <script src="../forWajehni.js"></script>
+  <script>
+    function goToHome() {
+      window.location.href = "../index.html";
+    }
+    function goToWajehni() {
+      window.location.href = "../wajehni.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إنشاء حساب - وجهني</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- الهيدر -->
+  <header class="login-header">
+    <div class="login-logo">
+      <img src="img/Logo.png" alt="شعار وجهني" />
+    </div>
+    <div class="login-actions">
+      <a href="index.html" class="login-link">عودة للرئيسية</a>
+      <a href="login.html" class="login-link highlight">تسجيل الدخول</a>
+    </div>
+  </header>
+
+  <!-- نموذج إنشاء حساب -->
+  <section class="auth-section">
+    <h2>إنشاء حساب جديد</h2>
+    <form>
+      <input type="text" id="fullName" placeholder="الاسم الكامل" required />
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required />
+      <input type="tel" id="phone" placeholder="رقم الجوال" required />
+      <input type="password" id="loginPassword" placeholder="كلمة المرور" required />
+
+      <div class="user-type">
+        <label><input type="radio" name="user" value="طالب" required /> طالب</label>
+        <label><input type="radio" name="user" value="ولي أمر" required /> ولي أمر</label>
+      </div>
+
+      <button type="submit">إنشاء حساب</button>
+    </form>
+  </section>
+
+  <!-- مكتبات Firebase -->
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBDECIS-T7Q_gj2NeJLBkzIo0Dr688oe-U",
+    authDomain: "wajehni-2820c.firebaseapp.com",
+    projectId: "wajehni-2820c",
+    storageBucket: "wajehni-2820c.appspot.com",
+    messagingSenderId: "712361399660",
+    appId: "1:712361399660:web:1dd3ad0cc0852a5979cf49"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // الباقي يكون كود التسجيل أو تسجيل الدخول هنا
+</script>
+
+
+<script type="module" src="register.js"></script>
+<script src="secrets.js"></script>
+
+
+
+
+</body>
+</html>

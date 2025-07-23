@@ -1,0 +1,16 @@
+# تجاهل ملف البيئة
+.env
+
+# تجاهل مجلد node_modules
+node_modules/
+
+# تجاهل ملفات نظام التشغيل
+.DS_Store
+Thumbs.db  
+
+
+
+
+
+ secrets.js
+

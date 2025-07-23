@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبار تخصص الهندسة</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <div class="navbar">
+      <button class="login-link" onclick="goToHome()">العودة للصفحة الرئيسية</button>
+      <h1>اختبار تخصص الهندسة</h1>
+      <button class="login-link" onclick="goToPlatform()">العودة إلى المنصة</button>
+    </div>
+  </header>
+
+  <!-- محتوى الاختبار -->
+  <main id="quiz-container" class="auth-section">
+    <h2>اختر المستوى المناسب لبدء الاختبار:</h2>
+
+    <div class="levels">
+      <button onclick="startQuiz('beginner', 'engineering')">مبتدئ</button>
+      <button onclick="startQuiz('intermediate', 'engineering')">متوسط</button>
+      <button onclick="startQuiz('advanced', 'engineering')">متقدم</button>
+    </div>
+
+    <div id="question-section" style="display: none;"></div>
+    <button id="submit-btn" onclick="submitQuiz()" style="display: none;">إنهاء الاختبار</button>
+    <div id="result" class="result-box"></div>
+  </main>
+
+  <script src="../forPlat.js"></script>
+  <script>
+    function goToHome() {
+      window.location.href = "../index.html";
+    }
+    function goToPlatform() {
+      window.location.href = "../platform.html";
+    }
+  </script>
+
+</body>
+</html>

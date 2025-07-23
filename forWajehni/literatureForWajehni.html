@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مسار الادبي - وجهني</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header class="main-header">
+    <div class="navbar">
+      <button class="login-link" onclick="goToHome()">العودة للصفحة الرئيسية</button>
+      <h1>المسار الادبي</h1>
+      <button class="login-link" onclick="goToWajehni()">العودة إلى وجهني</button>
+    </div>
+  </header>
+
+  <!-- قسم التخصص -->
+  <section class="subject-hero">
+    <h1>الأدبي</h1>
+    <p>
+        يحتفي التخصص الأدبي بعمق الإنسان وثقافته، حيث يركّز على استخدام اللغة في التعبير والتحليل. يتضمن دراسة الأدب العربي المعاصر والقديم، التاريخ الذي يروي تطور المجتمعات، الجغرافيا التي تربط الإنسان بمحيطه، والعلوم الاجتماعية التي تفسر النفس والسلوك، بالإضافة إلى الفلسفة التي تمكّن من التفكير النقدي. يمنح الخريج القدرة على الكتابة بإتقان، التحليل العميق للقضايا الثقافية، وتقديم الرأي بطريقة متسقة ومقنعة. كما يؤهله للعمل في مجالات مثل الصحافة، الترجمة، التعليم، والدراسات الثقافية. الأدبي مناسب تمامًا لمن يحب القراءة والرواية، ولديه الشغف بلغة متميزة وطلاقة في التواصل.
+    </p>
+  </section>
+
+  <!-- فيديو تعريفي -->
+  <section class="youtube-video">
+  <iframe 
+    src="https://www.youtube.com/embed/NdHCJRfR12Y" 
+    title="فيديو تعريفي عن التخصص الأدبي" 
+    allowfullscreen>
+  </iframe>
+</section>
+
+
+  <!-- زر العودة -->
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="../wajehni.html" class="return-button">العودة إلى وجهني</a>
+  </div>
+
+  <!-- سكربت -->
+  <script src="../forWajehni.js"></script>
+  <script>
+    function goToHome() {
+      window.location.href = "../index.html";
+    }
+    function goToWajehni() {
+      window.location.href = "../wajehni.html";
+    }
+  </script>
+
+</body>
+</html>
