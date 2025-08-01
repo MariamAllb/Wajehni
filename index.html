@@ -25,6 +25,7 @@
         <li><a href="index.html">الرئيسية</a></li>
         <li><a href="platform.html">المنصة</a></li>
         <li><a href="wajehni.html">وجهني</a></li>
+        <li><a href="about.html">عن وجهني</a></li>
         <li><a href="login.html" class="login-btn" id="loginLink">تسجيل الدخول</a></li>
         <li><a href="register.html" id="joinLink">انضم معنا</a></li>
         <li id="profileItem" style="display: none;"><a href="profile.html">حسابك</a></li>
@@ -55,22 +56,39 @@
   <!-- فاصل أبيض -->
   <div class="section-spacer"></div>
 
-  <!-- شريط التواصل -->
-  <footer class="wajehni-footer">
-    <div class="footer-right">
-      <img src="img/vv2030.png" alt="رؤية 2030" />
-      <img src="img/minlogo.png" alt="وزارة التعليم" />
-    </div>
-    <div class="footer-left">
-      <p class="footer-title">تواصل معنا</p>
-      <p>📧 Mariamsalbarrak@gmail.com</p>
-      <p>📞 +966 50 974 6866</p>
-    </div>
-  </footer>
+
+<!-- شريط التواصل -->
+<footer class="wajehni-footer">
+  <div class="footer-right">
+    <img src="img/vv2030.png" alt="رؤية 2030" />
+    <img src="img/minlogo.png" alt="وزارة التعليم" />
+  </div>
+
+  <!-- سطر الحقوق (في المنتصف) -->
+  <div class="footer-center">
+    © 2025  وجهني  -  جميع الحقوق محفوظة   
+  </div>
+
+  <div class="footer-left">
+    <p class="footer-title">تواصل معنا</p>
+    <p>📧 Mariamsalbarrak@gmail.com</p>
+    <p>📞 +966 50 974 6866</p>
+  </div>
+</footer>
+
+
+
+
+
+
 
   <!-- سكربتات -->
   <script src="script.js"></script>
   <script src="nav.js"></script>
+
+
+
+
 
   <!-- Firebase مكتبات -->
   <script type="module">
@@ -96,19 +114,19 @@ const studentName = localStorage.getItem("studentName");
 
 onAuthStateChanged(auth, (user) => {
   if (user && studentName) {
-    // ✅ غيّر "تسجيل الدخول" إلى اسم فقط (بدون رابط)
+    
     if (loginLink) {
       loginLink.textContent = `مرحبًا، ${studentName}`;
       loginLink.removeAttribute("href");
       loginLink.style.cursor = "default";
     }
 
-    // ✅ أظهر زر "حسابك"
+    
     if (profileItem) {
       profileItem.style.display = "inline-block";
     }
 
-    // ✅ غيّر "انضم معنا" إلى تسجيل الخروج
+    
     if (joinLink) {
       joinLink.textContent = "تسجيل الخروج";
       joinLink.href = "#";
