@@ -857,3 +857,65 @@ body {
     height: 250px;
   }
 }
+/*----- ------------------- about -------------------------
+   صفحة عن وجهني
+---------------------------- */
+
+.about-section {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+  color: #5D4C7B;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+/* زر العودة */
+.nav-btn {
+  background-color: #39A852;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    margin: 30px 15px;
+    padding: 25px 20px;
+  }
+
+  .about-section h1 {
+    font-size: 26px;
+  }
+
+  .about-section p {
+    font-size: 16px;
+  }
+}
+.footer-copy {
+  text-align: center;
+  font-size: 14px;
+  color: #5D4C7B;
+  padding: 15px 0;
+  background-color: #eae5dd;
+  border-top: 1px solid #d3cfc6;
+}
+
+
+

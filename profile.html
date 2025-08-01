@@ -54,49 +54,7 @@
     <button class="edit-btn" onclick="window.location.href='index.html'">عودة للرئيسية</button>
   </div>
 
-  <!-- Firebase Script -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBDECIS-T7Q_gj2NeJLBkzIo0Dr688oe-U",
-      authDomain: "wajehni-2820c.firebaseapp.com",
-      projectId: "wajehni-2820c",
-      storageBucket: "wajehni-2820c.appspot.com",
-      messagingSenderId: "712361399660",
-      appId: "1:712361399660:web:1dd3ad0cc0852a5979cf49"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    const nameEl = document.getElementById("profileName");
-    const emailEl = document.getElementById("profileEmail");
-    const phoneEl = document.getElementById("profilePhone");
-    const userTypeEl = document.getElementById("profileUserType");
-
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          nameEl.textContent = data.fullName;
-          emailEl.textContent = data.email;
-          phoneEl.textContent = data.phone;
-          userTypeEl.textContent = data.userType;
-        } else {
-          alert("لم يتم العثور على بيانات المستخدم.");
-        }
-      } else {
-        alert("يرجى تسجيل الدخول أولاً.");
-        window.location.href = "login.html";
-      }
-    });
-  </script>
+  <!-- ملف جافاسكربت خارجي -->
+  <script type="module" src="profile.js"></script>
 </body>
 </html>
