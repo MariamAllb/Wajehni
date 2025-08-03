@@ -2,25 +2,31 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { firebaseConfig } from "./secrets.js";
 
+// تهيئة Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const registerForm = document.querySelector('form');
+// الحصول على النموذج عبر ID
+const form = document.getElementById("registerForm");
 
-if (registerForm) {
-  registerForm.addEventListener('submit', async (e) => {
+if (form) {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const email = document.querySelector('input[type="email"]').value;
-    const password = document.querySelector('input[type="password"]').value;
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     try {
+      // إنشاء حساب جديد
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // تخزين الاسم والبريد محليًا
-      localStorage.setItem("studentName", email.split('@')[0]);  // مثال: اسم قبل @
+      // حفظ بيانات المستخدم محليًا
+      localStorage.setItem("studentName", fullName);
       localStorage.setItem("loginStatus", "تم إنشاء الحساب بنجاح!");
 
+      // توجيه المستخدم للصفحة الرئيسية
       window.location.href = "index.html";
     } catch (error) {
       alert("فشل في إنشاء الحساب: " + error.message);
