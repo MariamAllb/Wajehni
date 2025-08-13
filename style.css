@@ -956,5 +956,89 @@ body {
   }
 }
 
+/* للهواتف المحمولة */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 120px;
+    margin-top: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-quotes-center {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .quote-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .quote-circle img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .specialization-circles {
+    gap: 20px;
+  }
+
+  .specialization-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .specialization-circle img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .specialization-circle p {
+    font-size: 14px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .wajehni-footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+}
 
 
